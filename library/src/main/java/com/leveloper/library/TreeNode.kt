@@ -15,6 +15,16 @@ class TreeNode<T: LayoutItemType>(
     var isExpand = true
         private set
 
+    private var _depth: Int = UNDEFINE
+    val depth: Int
+        get() {
+            if (isRoot)
+                _depth = 0
+            else if (_depth == UNDEFINE)
+                _depth = parent!!.depth + 1
+            return _depth
+        }
+
     val isRoot: Boolean
         get() = parent == null
 
@@ -64,5 +74,9 @@ class TreeNode<T: LayoutItemType>(
 
     override fun toString(): String {
         return "TreeNode(content=$content, parent=$parent, childList=${_childList.size})"
+    }
+
+    companion object {
+        private const val UNDEFINE = -1
     }
 }

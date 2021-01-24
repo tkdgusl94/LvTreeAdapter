@@ -15,4 +15,6 @@ abstract class RecyclerTreeViewHolder<out B: ViewDataBinding>(parent: ViewGroup,
     protected val binding: B = DataBindingUtil.bind(itemView)!!
 
     abstract fun bind(node: TreeNode<*>)
+
+    abstract fun onToggle(node: TreeNode<*>, isExpand: Boolean)
 }
