@@ -5,7 +5,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import java.lang.Exception
 
-abstract class RecyclerTreeViewAdapter<VH: RecyclerTreeViewHolder<ViewDataBinding>>(
+abstract class LvTreeAdapter<VH: LvTreeViewHolder<ViewDataBinding>>(
     nodes: List<TreeNode<*>>? = null
 ): RecyclerView.Adapter<VH>() {
 
@@ -121,6 +121,6 @@ abstract class RecyclerTreeViewAdapter<VH: RecyclerTreeViewHolder<ViewDataBindin
     }
 
     interface OnTreeNodeListener {
-        fun onClick(node: TreeNode<*>, viewHolder: RecyclerTreeViewHolder<*>): Boolean
+        fun onClick(node: TreeNode<*>, viewHolder: LvTreeViewHolder<*>): Boolean
     }
 }

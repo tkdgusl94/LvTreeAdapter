@@ -3,9 +3,8 @@ package com.leveloper.recyclertreeview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import com.leveloper.library.RecyclerTreeViewAdapter
-import com.leveloper.library.RecyclerTreeViewHolder
+import com.leveloper.library.LvTreeAdapter
+import com.leveloper.library.LvTreeViewHolder
 import com.leveloper.library.TreeNode
 import com.leveloper.recyclertreeview.databinding.ActivityMainBinding
 
@@ -20,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.recyclerView.adapter = TreeViewAdapter(getNodeList()).apply {
-            setOnTreeNodeListener(object : RecyclerTreeViewAdapter.OnTreeNodeListener {
-                override fun onClick(node: TreeNode<*>, viewHolder: RecyclerTreeViewHolder<*>): Boolean {
+            setOnTreeNodeListener(object : LvTreeAdapter.OnTreeNodeListener {
+                override fun onClick(node: TreeNode<*>, viewHolder: LvTreeViewHolder<*>): Boolean {
                     if (!node.isLeaf) {
                         viewHolder.onToggle(node, !node.isExpand)
                     }

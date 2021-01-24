@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class RecyclerTreeViewHolder<out B: ViewDataBinding>(parent: ViewGroup, @LayoutRes val layoutRes: Int)
+abstract class LvTreeViewHolder<out B: ViewDataBinding>(parent: ViewGroup, @LayoutRes val layoutRes: Int)
     : RecyclerView.ViewHolder(LayoutInflater.from(parent.context).inflate(layoutRes, parent, false)) {
 
     protected val context = itemView.context
